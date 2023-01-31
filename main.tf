@@ -20,22 +20,32 @@ resource "aws_security_group" "Ec2_security1" {
   description = "Allow TLS inbound traffic"
   vpc_id      = "vpc-0bbcc1b6d563924c3"
   ingress {
-    from_port = 80
-    to_port = 80
-    protocol = "tcp"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
   ingress {
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
   egress {
-    from_port = 0
-    to_port = 0
-    protocol = "-1"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
+  }
+  tags = {
+    git_commit           = "525d0ff7b527f73a6053e7ed619f72d5b92e1bfc"
+    git_file             = "main.tf"
+    git_last_modified_at = "2023-01-31 20:30:25"
+    git_last_modified_by = "pvondemhagen@yahoo.com"
+    git_modifiers        = "pvondemhagen"
+    git_org              = "pvondemhagen"
+    git_repo             = "Terraform_AWS_Demo_1"
+    yor_trace            = "19fc4d8e-7f28-47ab-8947-5da26e59dc08"
   }
 }
 
@@ -44,6 +54,14 @@ resource "aws_instance" "Prisma_Cloud_demo_server" {
   instance_type = "t2.micro"
 
   tags = {
-    Name = "PrismaCloudDemoAppServerInstance"
+    Name                 = "PrismaCloudDemoAppServerInstance"
+    git_commit           = "525d0ff7b527f73a6053e7ed619f72d5b92e1bfc"
+    git_file             = "main.tf"
+    git_last_modified_at = "2023-01-31 20:30:25"
+    git_last_modified_by = "pvondemhagen@yahoo.com"
+    git_modifiers        = "pvondemhagen"
+    git_org              = "pvondemhagen"
+    git_repo             = "Terraform_AWS_Demo_1"
+    yor_trace            = "5c6bf7fe-e941-4fcd-93a7-11b5574ef44f"
   }
 }
